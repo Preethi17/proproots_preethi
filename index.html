@@ -4,24 +4,273 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Enquiry - Proproots</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+	<link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="css/proproots.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/moment.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	
+  </head>
+  <body>
+   
+		<div class="container-fluid">
+		 	  <!-- Static navbar -->
+			  <div class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<div class="col-xs-1 col-sm-1 col-md-1"  >
+					</div>
+				   <div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+					  <li class="active" ><a href="index.html">Enquiry</a></li>
+					  <li><a href="hotels.html">Hotels</a></li>             
+					</ul>
+				  </div><!--/.nav-collapse -->
+				</div>
+			  </div>
+			
+		 
+		  <div class="container-fluid" style="background-color:#000;background-image:url('img/hotel.jpg');">		  
+			 <div class="row"  >
+				<div class="col-xs-1 col-sm-1 col-md-1"  >
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 bgColor"  >
+					<br>
+					<form role="form">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6 ">
+									<div class="form-group">
+										<label for="exampleInputEmail1">Name</label>
+										<input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+									  </div>
+								</div>
+								<div class="col-md-offset-6">
+								</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								  <div class="form-group">
+									<label for="exampleInputPassword1">Email ID</label>
+									<input type="email" class="form-control" id="exampleInputPassword1" placeholder="">
+								  </div>
+								  <div class="form-group">
+									<label for="exampleInputPassword1">Destination/City</label>
+									<input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+								  </div>
+								  <div class="form-group">
+									<label for="exampleInputPassword1">Check-in Date & Time</label>
+									<div class="form-group">
+										<div class='input-group date' id='datetimepicker1'>
+											<input type='text' class="form-control" placeholder="Select Date and Time "/>
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								  </div>
+								  <div class="row">
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<div class="form-group">
+												<label for="exampleInputPassword1" id="type">Appartments/Rooms</label>
+												<div class="btn-group">
+												  <button type="button" class="btn btn-default" id="minus">-</button>
+												  <button type="button" class="btn btn-default" ><span id="val">1</span></button>
+												  <button type="button" class="btn btn-default" id="plus">+</button>
+												</div>
+											  </div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<div class="form-group" id="adult">
+												<label for="exampleInputPassword1">Adults</label>
+												<div class="btn-group" id="adult1">
+												  <button type="button" class="btn btn-default" onclick="dec('1');">-</button>
+												  <button type="button" class="btn btn-default"><span id="spanadult1">2</span></button>
+												  <button type="button" class="btn btn-default" onclick="inc('1');">+</button>
+												</div>
+											  </div>
+											</div>
+										</div>
+								  </div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								 
+								 <div class="form-group">
+									<label for="exampleInputEmail1">Mobile Number</label>
+									<input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+								  </div>
+								  <div class="form-group">
+									<label for="exampleInputPassword1">Boarding Type</label>
+									<select class="form-control" name="boarding" onchange="javascript:typechange(this.value);">
+									<option>Select Boarding Type</option>
+									<option>Appartment</option>
+									<option>Hotel</option>
+									<option>Lodge</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Check-out Date & Time</label>
+									<div class="form-group">
+										<div class='input-group date' id='datetimepicker2'>
+											<input type='text' class="form-control" placeholder="Select Date and Time "/>
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+									</div>
+								  </div>
+								  <div class="form-group">
+										<label for="transport">Transport&nbsp;&nbsp;</label>
+										<input type="radio" name="transport" id="transport" value="option1">
+										 </label>
+								  </div>
+								<div class="form-group">
+										<div class="row">
+											<div class="col-md-3">
+											<label for="exampleInputPassword1">Food&nbsp;&nbsp;</label>	
+											</div>
+											<div class="col-md-9">
+												<div class="radio">
+												  <label>
+												  <input type="radio" name="breakfast" id="breakfast" value="breakfast" data-waschecked="false" class="food">
+												  BreakFast
+												  </label>
+											  </div>
+											  <div class="radio">
+												   <label>
+												  <input type="radio" name="lunch" id="lunch" value="lunch" data-waschecked="false" class="food">
+												  Lunch
+												  </label>
+											  </div>
+											  <div class="radio">
+												   <label>
+												  <input type="radio"  name="dinner" id="dinner" value="dinner" data-waschecked="false" class="food">
+												  Dinner
+												  </label>
+											  </div>
+											</div>
+										</div>
+										
+										
+								  </div>
+								
+								<div class="form-group">
+									<label for="exampleInputPassword1">Budget</label>
+									<select class="form-control" name="boarding">
+									<option>Select Budget</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									</select>
+								</div>
+								  <div class="btn-group">
+									<button type="submit" class="btn btn-yellow">SUBMIT&nbsp;<span class="glyphicon glyphicon-play"></span></button>
+								  </div>
+							</div>
+						</div>
+					 
+					</form>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4" >
+					<!--<img id="irc_mi" src="img/hotel.jpg" class="img-thumbnail" alt="Responsive image" style="margin-top: 0px;">-->
+				</div>
+				<div class="col-xs-1 col-sm-1 col-md-1"  >
+				</div>
+			</div>
+    	   </div><!--/.container-fluid -->
+		</div>
+		<div id="footer">
+		  <div class="container">
+			<p class="text-muted">Place sticky footer content here.</p>
+		  </div>
+		</div>
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+				$('#datetimepicker2').datetimepicker();
+				$('input[type="radio"]').click(function(){
+					var $radio = $(this);
+					// if this was previously checked
+					if ($radio.data('waschecked') == true)
+					{
+						$radio.prop('checked', false);
+						$radio.data('waschecked', false);
+					}
+					else
+						$radio.data('waschecked', true);
+
+					// remove was checked from other radios
+					$radio.siblings('input[type="radio"]').data('waschecked', false);
+				});
+            });
+			$("#plus").click(function(){
+			var count=parseInt($("#val").text());
+			if(count<4)
+			{
+			var adult="adult"+(count+1);
+			$("#val").text(count+1);
+			$("#adult").append('<div class="btn-group" id="'+adult+'"><button type="button" class="btn btn-default" onclick="dec('+(count+1)+');">-</button><button type="button" class="btn btn-default"><span id="span'+adult+'">2</span></button>  <button type="button" class="btn btn-default" onclick="inc('+(count+1)+');">+</button></div>');
+			}
+			});
+			
+			$("#minus").click(function(){
+			var count=parseInt($("#val").text());
+			if(count>1)
+			{
+			$("#val").text(count-1);
+			var adult="adult"+(count);
+			$("#"+adult).remove("");
+			}
+			});
+			function inc(count) {
+				var val=parseInt($("#spanadult"+count).text())+1;
+				if(val<5)
+			  {
+              $("#spanadult"+count).text(val);
+			  }
+            }
+			function dec(count) { 
+			  var val=parseInt($("#spanadult"+count).text())-1;
+			  if(val>0)
+			  {
+              $("#spanadult"+count).text(val);
+			  }
+            }
+			function typechange(val)
+			{
+			//val=$("#boarding").val();
+			//alert(val);
+			if(val=="Hotel" || val=="Lodge")
+			{
+			$("#type").text("Rooms");
+			}
+			else if(val=="Appartment")
+			{
+			$("#type").text("Appartments");
+			}
+			else
+			{
+			$("#type").text("Appartments/Rooms");
+			}
+			}
+			$('.food').click(function(){
+                $("input[class=]").each(function(){
+                    this.checked = true;
+					//this.checked = false;
+                });
+            });		
+        </script>
+   
+	
   </body>
 </html>

@@ -1,0 +1,34 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navbar {
+ margin-bottom: -1px;
+ font-weight:bold;
+}
+.navbar-collapse {
+	padding-left:0px;
+}
+.navbar-default .navbar-nav .active > a, .navbar-default .navbar-nav .active > a:hover, .navbar-default .navbar-nav .active > a:focus {
+	color: #000;
+	font-weight:bold;
+	background-color: #3887F5;
+	border-top: 4px solid rgb(213, 171, 5);
+	margin-left: -13px;
+}
+.btn-yellow {
+	color: #000;
+	font-weight:bold;
+	background-color: rgb(213, 171, 5);
+	border-color: rgb(213, 171, 5);
+}
+label {
+	color: #ffffff;
+}
+.btn-group .btn+.btn{
+	font-weight:bold;
+}
+.bgColor{
+	background-color: #3887F5;
+	padding-bottom: 20px;
+}
